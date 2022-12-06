@@ -1,0 +1,34 @@
+mas opcua_mas {
+
+    agent dx10 : dx10.asl {
+        goals: start       
+        
+        focus: itm_factory_workspace.dx10tda
+               
+    }
+
+    // agent vl10 : vl10.asl {
+    //     goals: start
+         
+    //     focus: itm_factory_workspace.vl10tda
+               
+    // }
+
+    // agent xy10 : xy10.asl {
+    //     goals: start
+        
+    //     focus: itm_factory_workspace.xy10tda
+    // }
+
+    agent monitor : monitor.asl{
+        //goals : logMessage("Hello")
+        //focus : itm_factory_workspace
+    }
+
+    workspace itm_factory_workspace  {
+        artifact xy10tda : org.hypermedea.ThingArtifact("http://localhost:3001/static/xy10td.ttl")
+        artifact vl10tda : org.hypermedea.ThingArtifact("http://localhost:3001/static/vl10td.ttl")
+        artifact dx10tda : org.hypermedea.ThingArtifact("http://localhost:3001/static/dx10td.ttl")
+                
+    }
+}
